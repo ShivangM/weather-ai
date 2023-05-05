@@ -4,6 +4,10 @@ const nextConfig = {
     appDir: true,
     serverComponentsExternalPackages: ['@tremor/react'],
   },
+
+  images: {
+    domains: ['www.weatherbit.io'],
+  },
 };
 
 module.exports = nextConfig;
