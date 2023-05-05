@@ -50,7 +50,9 @@ const WeatherPage = async ({ params: { city, lat, long } }: Props) => {
   });
 
   const GPTData = await res.json();
-  const { content } = GPTData;
+  const content = GPTData
+    ? GPTData.content
+    : 'Sorry unable to generate AI based summary at current time.';
 
   return (
     <div>
@@ -67,7 +69,7 @@ const WeatherPage = async ({ params: { city, lat, long } }: Props) => {
           </div>
 
           <div className="m-2 mb-10">
-            <CalloutCard message={content} />
+            <CalloutCard message={content} warning={!GPTData} />
           </div>
 
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-2 m-2">
