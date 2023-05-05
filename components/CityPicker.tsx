@@ -11,7 +11,7 @@ const options = Country.getAllCountries().map((country) => ({
     longitude: country.longitude,
     isoCode: country.isoCode,
   },
-  lable: country.name,
+  label: country.name,
 }));
 
 const CityPicker = () => {
@@ -64,7 +64,7 @@ const CityPicker = () => {
                 name: state.name,
                 stateCode: state.stateCode,
               },
-              lable: state.name,
+              label: state.name,
             }))}
             value={selectedCity}
             onChange={handleSelectedCity}
