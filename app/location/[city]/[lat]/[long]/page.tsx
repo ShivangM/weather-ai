@@ -49,7 +49,7 @@ const WeatherPage = async ({ params: { city, lat, long } }: Props) => {
     }),
   });
 
-  const GPTData = await res.json();
+  const GPTData = (await res?.json()) || null;
   const content = GPTData
     ? GPTData.content
     : 'Sorry unable to generate AI based summary at current time.';
